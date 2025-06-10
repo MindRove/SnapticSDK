@@ -8,7 +8,7 @@ The **Snaptic SDK** provides a Bluetooth Low Energy (BLE) interface to connect, 
 
 ## Supported Platform
 
-- **Windows 10 or higher **
+- Windows 10 or higher 
 - .NET 8 MAUI or WinAppSDK
 
 ---

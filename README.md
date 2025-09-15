@@ -66,12 +66,13 @@ Subscribe to the IMU data event:
 sdk.OnIMUDataReceived += (IMUDataPacket data) =>
 {
     Console.WriteLine($"Time: {data.time}");
-    foreach (var sensor in data.sensors)
+    Console.WriteLine($"IMU Packet #{data.packetNumber}");
+    foreach (var packet in data.packets)
     {
-        Console.WriteLine($"Main Accel: X={sensor.MainAccel.X}, Y={sensor.MainAccel.Y}, Z={sensor.MainAccel.Z}");
-        Console.WriteLine($"Sub Accel: X={sensor.SubAccel.X}, Y={sensor.SubAccel.Y}, Z={sensor.SubAccel.Z}");
-        Console.WriteLine($"Main Gyro: X={sensor.MainGyro.X}, Y={sensor.MainGyro.Y}, Z={sensor.MainGyro.Z}");
-        Console.WriteLine($"Sub Gyro: X={sensor.SubGyro.X}, Y={sensor.SubGyro.Y}, Z={sensor.SubGyro.Z}");
+        Console.WriteLine($"Main Accel: X={packet.MainAccel.X}, Y={packet.MainAccel.Y}, Z={packet.MainAccel.Z}");
+        Console.WriteLine($"Sub Accel: X={packet.SubAccel.X}, Y={packet.SubAccel.Y}, Z={packet.SubAccel.Z}");
+        Console.WriteLine($"Main Gyro: X={packet.MainGyro.X}, Y={packet.MainGyro.Y}, Z={packet.MainGyro.Z}");
+        Console.WriteLine($"Sub Gyro: X={packet.SubGyro.X}, Y={packet.SubGyro.Y}, Z={packet.SubGyro.Z}");
     }
 };
 ```
@@ -104,5 +105,3 @@ Console.WriteLine($"Current BLE State: {currentState}");
 ## Contact
 
 For feature requests or bugs, contact **[info@mindrove.com]**
-
-
